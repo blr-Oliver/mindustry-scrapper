@@ -14,14 +14,14 @@
       "pause": false
     },
     "fetchPages": {
-      "enabled": true,
+      "enabled": false,
       "prompt": "Fetching pages",
       "pause": false
     },
     "parsePages": {
-      "enabled": false,
+      "enabled": true,
       "prompt": "Parsing pages",
-      "pause": false
+      "pause": true
     },
     "collectPages": {
       "enabled": false,

@@ -1,6 +1,7 @@
 import {Config} from './execution';
 import {fetchPages} from './fetch/fetch-pages';
 import {fetchRoot} from './fetch/fetch-root';
+import {parsePages} from './parse/parse-pages';
 import {parseRoot} from './parse/parse-root';
 
 export type OperationNames =
@@ -25,5 +26,6 @@ export type Operation = (entry: Config) => Promise<void>;
 export const OPERATIONS: { [key in OperationNames]?: Operation } = {
   fetchRoot,
   parseRoot,
-  fetchPages
+  fetchPages,
+  parsePages
 }
