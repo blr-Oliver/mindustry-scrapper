@@ -8,3 +8,7 @@ export async function ensureExists(dirPath: string): Promise<void> {
 export function writeFile(file: string, content: string): Promise<void> {
   return fs.promises.writeFile(`${file}`, content, {encoding: 'utf8'});
 }
+
+export function normalizeFileName(name: string): string {
+  return name.replaceAll(/[\.:]/g, '_');
+}

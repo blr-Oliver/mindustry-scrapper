@@ -48,6 +48,3 @@ function validate(response: http.IncomingMessage): Error | undefined {
   }
 }
 
-export function normalizeFileName(name: string): string {
-  return name.replaceAll(/[\.:]/g, '_');
-}

@@ -9,12 +9,12 @@
       "pause": false
     },
     "parseRoot": {
-      "enabled": true,
+      "enabled": false,
       "prompt": "Parsing table of contents",
       "pause": false
     },
     "fetchPages": {
-      "enabled": false,
+      "enabled": true,
       "prompt": "Fetching pages",
       "pause": false
     },
