@@ -24,8 +24,13 @@
       "pause": false
     },
     "collectPages": {
-      "enabled": true,
+      "enabled": false,
       "prompt": "Collecting parsed pages",
+      "pause": false
+    },
+    "pivotData": {
+      "enabled": true,
+      "prompt": "Shaping data",
       "pause": false
     }
   }
