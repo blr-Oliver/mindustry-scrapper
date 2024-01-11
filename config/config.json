@@ -4,12 +4,12 @@
   "out": "out",
   "operations": {
     "fetchRoot": {
-      "enabled": true,
+      "enabled": false,
       "prompt": "Fetching root page",
       "pause": false
     },
     "parseRoot": {
-      "enabled": false,
+      "enabled": true,
       "prompt": "Parsing table of contents",
       "pause": false
     },
