@@ -19,12 +19,12 @@
       "pause": false
     },
     "parsePages": {
-      "enabled": true,
+      "enabled": false,
       "prompt": "Parsing pages",
-      "pause": true
+      "pause": false
     },
     "collectPages": {
-      "enabled": false,
+      "enabled": true,
       "prompt": "Collecting parsed pages",
       "pause": false
     }

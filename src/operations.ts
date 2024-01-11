@@ -3,6 +3,7 @@ import {fetchPages} from './fetch/fetch-pages';
 import {fetchRoot} from './fetch/fetch-root';
 import {parsePages} from './parse/parse-pages';
 import {parseRoot} from './parse/parse-root';
+import {collectPages} from './process/collect-pages';
 
 export type OperationNames =
     'fetchRoot' |
@@ -27,5 +28,6 @@ export const OPERATIONS: { [key in OperationNames]?: Operation } = {
   fetchRoot,
   parseRoot,
   fetchPages,
-  parsePages
+  parsePages,
+  collectPages
 }
