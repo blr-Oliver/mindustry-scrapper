@@ -1,5 +1,32 @@
 {
   "host": "https://mindustrygame.github.io",
   "path": "/wiki/",
-  "out": "out"
+  "out": "out",
+  "operations": {
+    "fetchRoot": {
+      "enabled": true,
+      "prompt": "Fetching root page",
+      "pause": false
+    },
+    "parseRoot": {
+      "enabled": false,
+      "prompt": "Parsing table of contents",
+      "pause": false
+    },
+    "fetchPages": {
+      "enabled": false,
+      "prompt": "Fetching pages",
+      "pause": false
+    },
+    "parsePages": {
+      "enabled": false,
+      "prompt": "Parsing pages",
+      "pause": false
+    },
+    "collectPages": {
+      "enabled": false,
+      "prompt": "Collecting parsed pages",
+      "pause": false
+    }
+  }
 }
