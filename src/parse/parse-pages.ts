@@ -67,7 +67,9 @@ function parseProperties(table: HTMLTableElement, result: Block) {
   let section: string = '';
   for (let i = 0; i < rows.length; ++i) {
     const cells = rows[i].cells;
-    if (cells.length === 1 || isEmpty(cells[1])) {
+    if ((cells.length === 1 || isEmpty(cells[1]))
+        && cells[0].querySelector('strong') // avoid wiki bug with empty properties
+    ) {
       section = cells[0].textContent!.trim();
     } else {
       const property: PropertyBase = {
@@ -79,7 +81,7 @@ function parseProperties(table: HTMLTableElement, result: Block) {
         (property as ListProperty).listValue = parseList(cells[1]);
         result.properties.push(property as ListProperty);
       } else {
-        (property as PlainProperty).value = cells[1].textContent!.trim();
+        (property as PlainProperty).value = cells[1].textContent?.trim() || '';
         result.properties.push(property as PlainProperty);
       }
     }
