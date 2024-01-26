@@ -78,6 +78,7 @@ class Statistics {
   listProperties: string[] = [];
   markerMapping: { [name: string]: string } = {};
   listPropertyMarkers: { [property: string]: string[] } = {};
+  maxLengths: { [property: string]: number } = {};
 
   constructor(public blocks: Block[]) {
   }
@@ -90,8 +91,10 @@ class Statistics {
     let allListPropertyItems = listPropertyValues.flatMap(property => property.listValue);
     const allMarkers = collectUniqueValues('marker', allListPropertyItems);
     allMarkers.reduce((hash, marker) => (hash[marker] = this.getShortMarker(marker), hash), this.markerMapping);
-    this.listProperties.forEach(listProperty =>
-        this.listPropertyMarkers[listProperty] = this.collectShortMarkers(listProperty, listPropertyValues));
+    this.listProperties.forEach(listProperty => {
+      this.listPropertyMarkers[listProperty] = this.collectShortMarkers(listProperty, listPropertyValues);
+      this.maxLengths[listProperty] = this.findMaxLength(listProperty, listPropertyValues);
+    });
   }
 
   private getShortMarker(marker: string): string {
@@ -104,5 +107,10 @@ class Statistics {
         .filter(value => value.name === listProperty)
         .flatMap(value => value.listValue));
     return longMarkers.map(marker => this.markerMapping[marker]).sort();
+  }
+  private findMaxLength(listProperty: string, listPropertyValues: ListProperty[]): number {
+    return Math.max(...listPropertyValues
+        .filter(value => value.name === listProperty)
+        .map(value => value.listValue.length));
   }
 }
